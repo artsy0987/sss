@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boyfriend Inquiry</title>
+<style>
+    /* Styling for the GIF container */
+    #gif-container {
+        display: none; /* Initially hidden */
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<p id="question">Mr Mohamed Ashmil, Will you be mine forever?</p>
+<div id="options">
+    <button onclick="chooseAnswer('yes')">Yes</button>
+    <button onclick="chooseAnswer('no')">No</button>
+</div>
+
+<!-- GIF container -->
+<div id="gif-container">
+    <img id="gif-image" src="https://media1.tenor.com/m/uxFcTNetI2AAAAAC/meleknurumm.gif" alt="GIF" width="200">
+</div>
+
+<script>
+    var gifDisplayed = false; // Flag to check if the GIF has been displayed
+
+    function chooseAnswer(answer) {
+        var question = document.getElementById("question");
+        var options = document.getElementById("options");
+        var gifContainer = document.getElementById("gif-container");
+        var gifImage = document.getElementById("gif-image");
+
+        if (answer === "yes" || answer === "yes2" || answer === "yes3" || answer === "yes4" || answer === "yes5" || answer === "definitelyYesBaby") {
+            question.textContent = "Great! Let's enjoy this journey together. I promise you that I will try my best to make you the happiest man on earth! Let's go on a date this weekend!";
+            options.innerHTML = "";
+            gifContainer.style.display = "block"; // Show the GIF
+            gifImage.src = "https://media1.tenor.com/m/uxFcTNetI2AAAAAC/meleknurumm.gif"; // Set the GIF source
+        } else if (answer === "no") {
+            question.textContent = "Poda Kalikalle! Will you be mine forever?";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes2')\">Yes</button><button onclick=\"chooseAnswer('no2')\">No</button>";
+            if (!gifDisplayed) { // Display different GIF only for the first "No" clicked
+                gifContainer.style.display = "block"; // Show the GIF
+                gifImage.src = "https://media.tenor.com/jiJr5TUKLxgAAAAi/angry-bubu.gif"; // Set the GIF source
+                gifDisplayed = true; // Set the flag to true
+            }
+        } else if (answer === "yes2") {
+            question.textContent = "Great! Let's enjoy this journey together. I promise you that I will try my best to make you the happiest man on earth! Let's go on a date this weekend!";
+            options.innerHTML = "";
+        } else if (answer === "no2") {
+            question.textContent = "Will you be mine forever? Please........";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes3')\">Yes</button><button onclick=\"chooseAnswer('ego')\">Ego ano</button>";
+        } else if (answer === "yes3") {
+            question.textContent = "Great! Let's enjoy this journey together. I promise you that I will try my best to make you the happiest man on earth! Let's go on a date this weekend!";
+            options.innerHTML = "";
+        } else if (answer === "ego") {
+            question.textContent = "Baby.... be mine naaaaa?";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes4')\">Yes</button><button onclick=\"chooseAnswer('no3')\">No</button>";
+        } else if (answer === "yes4") {
+            question.textContent = "Great! Let's enjoy this journey together. I promise you that I will try my best to make you the happiest man on earth! Let's go on a date this weekend!";
+            options.innerHTML = "";
+        } else if (answer === "no3") {
+            question.textContent = "Ninne kollum njan.. Maryadakku yes paranjo.";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes5')\">Yes</button><button onclick=\"chooseAnswer('no4')\">No</button>";
+        } else if (answer === "yes5") {
+            question.textContent = "Great! Let's enjoy this journey together. I promise you that I will try my best to make you the happiest man on earth! Let's go on a date this weekend!";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes2')\">Yes</button><button onclick=\"chooseAnswer('no3')\">No</button>";
+        } else if (answer === "no4") {
+            question.textContent = "Will you be mine forever ikkutta???";
+            options.innerHTML = "<button onclick=\"chooseAnswer('yes2')\">Yes</button><button onclick=\"chooseAnswer('definitelyYesBaby')\">Definitely Yes Baby</button>";
+        }
+    }
+</script>
+
+</body>
+</html>
